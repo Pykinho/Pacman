@@ -1,6 +1,4 @@
 import java.util.*;
-import java.lang.*;
-import java.io.*;
 /**
  * Klasa odpowiedzialna za sortowanie wynikow graczy
  * 

@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.Properties;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.File;
 
 /**
  * Klasa odpowiadajaca za wczytywanie z plikow konfiguracyjnych
@@ -75,8 +76,8 @@ class Config {
     /** Odczytuje dane z plikow konfiguracyjnych, zmienia ich typ i zapisuje do pol w klasie */
     static void loadConfig() throws IOException
     {
-    
-     InputStream inputStream = new FileInputStream("conf/config.txt");
+     String fileSeparator = File.separator;
+     InputStream inputStream = new FileInputStream("conf" + fileSeparator + "config.txt");
     
      Properties properties = new Properties();
      properties.load(inputStream);
@@ -107,7 +108,8 @@ class Config {
     */
     static int difficultyLoader(String difficulty) throws IOException
     {
-     InputStream inputStream = new FileInputStream("conf/diff.txt");
+     String fileSeparator = File.separator;
+     InputStream inputStream = new FileInputStream("conf" + fileSeparator + "diff.txt");
     
      Properties properties = new Properties();
      properties.load(inputStream);
@@ -122,7 +124,8 @@ class Config {
     */
     static void levelLoader(int levelNumber) throws IOException
     {
-     InputStream inputStream = new FileInputStream("conf/levels.txt");
+     String fileSeparator = File.separator;
+     InputStream inputStream = new FileInputStream("conf" + fileSeparator + "levels.txt");
     
      Properties properties = new Properties();
      properties.load(inputStream);

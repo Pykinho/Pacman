@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
+import java.io.File;
 
 /**
  * 
@@ -18,7 +19,8 @@ public class Ranking{
     /** Umozliwia odczyt wynikow zapisanych w pliku tekstowym */
     static String readScores(int index) throws IOException
     {
-     InputStream inputStream = new FileInputStream("conf/Ranking.txt");
+     String fileSeparator = File.separator;
+     InputStream inputStream = new FileInputStream("conf" + fileSeparator + "Ranking.txt");
      Properties properties = new Properties();
      properties.load(inputStream);
      
@@ -44,9 +46,9 @@ public class Ranking{
         topScores.add(nick+":  "+currentScore);
         topScores.sort(new SortByScore());
         topScores.remove(5);
-        
-        InputStream inputStream = new FileInputStream("conf/Ranking.txt");
-        OutputStream outputStream = new FileOutputStream("conf/Ranking.txt");
+        String fileSeparator = File.separator;
+        InputStream inputStream = new FileInputStream("conf" + fileSeparator + "Ranking.txt");
+        OutputStream outputStream = new FileOutputStream("conf" + fileSeparator + "Ranking.txt");
         Properties properties = new Properties();
         properties.load(inputStream);
         
@@ -59,6 +61,5 @@ public class Ranking{
         properties.store(outputStream,null);
         inputStream.close();
     }
-
 
 }

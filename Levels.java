@@ -1,11 +1,9 @@
 import java.io.IOException;
 import java.util.Random;
-import java.util.Vector;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.awt.geom.*;
-import java.awt.image.*;
+import java.io.File;
+
 /**
  * Klasa odpowiadajaca za rysowanie
  */
@@ -63,6 +61,7 @@ public class Levels extends JPanel
     public void paintComponent(Graphics g)
     {        
 
+        String fileSeparator = File.separator;
         int a=0;
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.black);
@@ -148,52 +147,52 @@ public class Levels extends JPanel
         /** przygotowanie pacmana */
         if(Controls.yp<0)
         {
-         Image up = new ImageIcon("pacu.gif").getImage();
+         Image up = new ImageIcon("Graphics" +fileSeparator + "pacu.gif").getImage();
          g2d.drawImage(up,currXPac-7,currYPac-7,this);
         }
         
         else if(Controls.yp>0)
         {
-         Image down = new ImageIcon("Graphics/pacd.gif").getImage();
+         Image down = new ImageIcon("Graphics" +fileSeparator + "pacd.gif").getImage();
          g2d.drawImage(down,currXPac-7,currYPac-7,this);
         }
         
         else if(Controls.xp<0)
         {
-         Image left = new ImageIcon("Graphics/pacl.gif").getImage();
+         Image left = new ImageIcon("Graphics" +fileSeparator + "pacl.gif").getImage();
          g2d.drawImage(left,currXPac-7,currYPac-7,this);
         }
         
         else
         {
-         Image right = new ImageIcon("Graphics/pac.gif").getImage();
+         Image right = new ImageIcon("Graphics" +fileSeparator + "pac.gif").getImage();
          g2d.drawImage(right,currXPac-7,currYPac-7,this);
         }
         
         if(!bonus1 && bonus1_counter<400){
-        Image cherry = new ImageIcon("cherry.png").getImage();
+        Image cherry = new ImageIcon("Graphics" +fileSeparator + "cherry.png").getImage();
          /** narysowanie pierwszego bonusu */
          g2d.drawImage(cherry,Config.xBonusOne+5,Config.yBonusOne+5,this);
         }
         if(!bonus2 && bonus2_counter<400){
-        Image strawberry = new ImageIcon("strawberry.png").getImage();
+        Image strawberry = new ImageIcon("Graphics" +fileSeparator + "strawberry.png").getImage();
         /** narysowanie drugiego bonusu */
         g2d.drawImage(strawberry,Config.xBonusTwo+5,Config.yBonusTwo+5,this);
         }
-        Image rGhost = new ImageIcon("Graphics/rGhost.gif").getImage();
+        Image rGhost = new ImageIcon("Graphics" +fileSeparator + "rGhost.gif").getImage();
         /** narysowanie pierwszego ducha  */
         g2d.drawImage(rGhost,currXG1,currYG1,this);
         
         
-        Image oGhost = new ImageIcon("Graphics/oGhost.gif").getImage();
+        Image oGhost = new ImageIcon("Graphics" +fileSeparator + "oGhost.gif").getImage();
         /** narysowanie drugiego ducha */
         g2d.drawImage(oGhost,currXG2,currYG2,this);
 
-        Image bGhost = new ImageIcon("Graphics/bGhost.gif").getImage();
+        Image bGhost = new ImageIcon("Graphics" +fileSeparator + "bGhost.gif").getImage();
         /** narysowanie trzeciego ducha */
         g2d.drawImage(bGhost,currXG3,currYG3,this);
         
-        Image pGhost = new ImageIcon("Graphics/pGhost.gif").getImage();
+        Image pGhost = new ImageIcon("Graphics" +fileSeparator + "pGhost.gif").getImage();
         /** narysowanie czwartego ducha */
         g2d.drawImage(pGhost,currXG4,currYG4,this);
         

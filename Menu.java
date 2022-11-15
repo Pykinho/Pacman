@@ -1,11 +1,10 @@
 import java.io.IOException;
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import java.awt.event.WindowAdapter;
-//import java.awt.event.WindowEvent;
+import java.io.File;
+
 /**
  * Klasa odpowiedzialna za wyświetlanie i działanie menu gry - w tym okna z najlepszymi wynikami, okna z poziomem trudnosci i okna z wpisaniem nazwy uzytkownika
 
@@ -39,6 +38,7 @@ public class Menu extends JPanel{
     void mainMenu() throws IOException
     {
         //this.getContentPane().removeAll();
+        String fileSeparator = File.separator;
         this.removeAll();
         this.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
@@ -52,7 +52,7 @@ public class Menu extends JPanel{
         c.gridy = 0;
         this.add(gameLabel, c);
         
-        ImageIcon pacImage = new ImageIcon("Graphics/pac1.png");
+        ImageIcon pacImage = new ImageIcon("Graphics" + fileSeparator + "pac1.png");
         JLabel pacLabel = new JLabel(pacImage);
         c.gridx = 0;
         c.gridwidth = 1;
@@ -89,7 +89,7 @@ public class Menu extends JPanel{
         this.add(difficultyButton, c);
         
         
-        ImageIcon ghostImage = new ImageIcon("Graphics/Gho1.png");
+        ImageIcon ghostImage = new ImageIcon("Graphics" + fileSeparator + "Gho1.png");
         JLabel ghostLabel = new JLabel(ghostImage);
         c.gridx = 2;
         c.gridwidth = 1;

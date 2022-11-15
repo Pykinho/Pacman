@@ -1,0 +1,11 @@
+#Tue Nov 15 15:39:13 CET 2022
+name4=Player
+name3=null
+score2=1540
+score3=1510
+score4=740
+score0=2190
+score1=2130
+name2=mmm
+name1=Player
+name0=dddd
